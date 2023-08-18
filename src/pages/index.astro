@@ -1,5 +1,4 @@
 ---
-import millify from 'millify'
 import moment from 'moment'
 import { stats, coins } from '../api/api.js'
 import { news } from '../api/apiBingNews.js'
@@ -55,36 +54,34 @@ interface FreshNews {
 					class="flex items-center justify-between rounded-2xl bg-slate-800 p-2 font-sun font-normal capitalize text-lavender-alt md:p-4 md:text-xl"
 				>
 					Total Cryptos<span class="pr-2 font-sun text-2xl text-aqua md:pr-5"
-						>{millify(stats.totalCoins)}</span
+						>{stats.totalCoins}</span
 					>
 				</div>
 				<div
 					class="flex items-center justify-between rounded-2xl bg-slate-800 p-2 font-sun font-normal capitalize text-lavender-alt md:p-4 md:text-xl"
 				>
 					Total Xchanges <span class="pr-2 font-sun text-2xl text-aqua md:pr-5"
-						>{millify(stats.totalExchanges)}</span
+						>{stats.totalExchanges}</span
 					>
 				</div>
 				<div
 					class="flex items-center justify-between rounded-2xl bg-slate-800 p-2 font-sun font-normal capitalize text-lavender-alt md:p-4 md:text-xl"
 				>
 					<span class="pr-5 md:pr-0">Total Market Cap</span><span
-						class="pr-2 font-sun text-2xl text-aqua md:pr-5">{millify(stats.totalMarkets)}</span
+						class="pr-2 font-sun text-2xl text-aqua md:pr-5">{stats.totalMarkets}</span
 					>
 				</div>
 				<div
 					class="flex items-center justify-between rounded-2xl bg-slate-800 p-2 font-sun font-normal capitalize text-lavender-alt md:p-4 md:text-xl"
 				>
 					<span class="pr-5 md:pr-0">Total 24h Volume</span>
-					<span class="pr-2 font-sun text-2xl text-aqua md:pr-5"
-						>{millify(stats.total24hVolume)}</span
-					>
+					<span class="pr-2 font-sun text-2xl text-aqua md:pr-5">{stats.total24hVolume}</span>
 				</div>
 				<div
 					class="flex items-center justify-between rounded-2xl bg-slate-800 p-2 font-sun font-normal capitalize text-lavender-alt md:p-4 md:text-xl"
 				>
 					Total Markets <span class="pr-2 font-sun text-2xl text-aqua md:pr-5 md:text-3xl"
-						>{millify(stats.totalMarketCap)}</span
+						>{stats.totalMarketCap}</span
 					>
 				</div>
 			</div>
@@ -131,13 +128,13 @@ interface FreshNews {
 									{currency.symbol}
 								</p>
 								<p class="stat-value font-sun text-lavender-alt md:py-2">
-									Price: <span class="text-aqua">${millify(currency.price)} </span>{' '}
+									Price: <span class="text-aqua">${currency.price} </span>{' '}
 								</p>
 								<p class="whitespace-nowrap font-sun font-thin text-gray-400 md:text-lg">
-									Market Cap: <span class="text-gray-300">{millify(currency.marketCap)} </span>
+									Market Cap: <span class="text-gray-300">{currency.marketCap} </span>
 								</p>
 								<p class="whitespace-nowrap font-sun font-thin text-gray-400 md:text-lg">
-									Daily Change: <span class="text-gray-300">{millify(currency.change)}%</span>
+									Daily Change: <span class="text-gray-300">{currency.change}%</span>
 								</p>
 							</div>
 						</article>

@@ -1,5 +1,4 @@
 ---
-import millify from 'millify'
 import { coins } from '../api/api.js'
 import BaseLayout from '../layouts/BaseLayout.astro'
 const title = 'Top 50 Cryptos'
@@ -45,13 +44,13 @@ interface Currency {
 								{currency.symbol}
 							</p>
 							<p class="stat-value font-sun text-lavender-alt md:py-2">
-								Price: <span class="text-aqua">${millify(currency.price)} </span>{' '}
+								Price: <span class="text-aqua">${currency.price} </span>{' '}
 							</p>
 							<p class="whitespace-nowrap font-sun font-thin text-gray-400 md:text-lg">
-								Market Cap: <span class="text-gray-300">{millify(currency.marketCap)} </span>
+								Market Cap: <span class="text-gray-300">{currency.marketCap} </span>
 							</p>
 							<p class="whitespace-nowrap font-sun font-thin text-gray-400 md:text-lg">
-								Daily Change: <span class="text-gray-300">{millify(currency.change)}%</span>
+								Daily Change: <span class="text-gray-300">{currency.change}%</span>
 							</p>
 						</div>
 					</article>
