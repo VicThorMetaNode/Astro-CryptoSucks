@@ -8,8 +8,8 @@ const options = {
 	method: 'GET',
 	headers: {
 		'X-BingApis-SDK': 'true',
-		'X-RapidAPI-Key': '49848b005amshe8bca68c28066e4p15202fjsn8daf06491b00',
-		'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+		'X-RapidAPI-Key': import.meta.env.ASTRO_RAPIDAPI_BING_KEY,
+		'X-RapidAPI-Host': import.meta.env.ASTRO_RAPIDAPI_BING_HOST
 	}
 };
 
