@@ -1,0 +1,43 @@
+---
+import { PiNewspaper, PiPlanetBold, PiHouseBold, PiHandSoapBold } from "react-icons/pi";
+---
+
+<section>
+ <div class="desktop  justify-between items-center md:flex hidden">
+    <div>
+        <a href="./">
+            <span class="flex items-center"><img src="/edition.png" alt="logo" class="h-20 w-20" >
+                <h1 class="font-sun font-bold text-2xl text-lavender">CryptoSucks</h1></span>
+        </a>
+    </div>
+        <div class="md:flex gap-5 pr-10 hidden">
+          <a href="./">
+            <span class="flex justify-start items-center gap-2 font-main font-normal text-xl text-white-alt hover:text-lavender hover:scale-90 duration-300  "> <PiHouseBold /> Home </span>
+        </a>
+          <a href="/crypto"><span class="flex justify-start items-center gap-2 font-main font-normal text-xl text-white-alt hover:text-lavender hover:scale-90 duration-300 "> <PiPlanetBold /> CryptoWorld </span></a>
+          <a href="/news"><span class="flex justify-start items-center gap-2 font-main font-normal text-xl text-white-alt hover:text-lavender hover:scale-90 duration-300 "> <PiNewspaper /> FreshNews </span></a>
+        </div>
+ </div>
+
+ <div class="mobile flex justify-between md:hidden">
+  <div >
+    <a href="./">
+        <span class="flex items-center"><img src="/edition.png" alt="logo" class="h-[4rem] w-[4rem]" >
+            <h1 class="font-sun font-bold text-xl text-lavender">CryptoSucks</h1></span>
+    </a>
+</div>
+    <div class="md:hidden flex items-center">
+        <details class="dropdown dropdown-end">
+            <summary class="m-1 btn text-lavender"><PiHandSoapBold size={"1.2rem"}/> </summary>
+            <ul class="p-2 shadow-xl menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+              <li> <a href="./">
+                <span class="flex justify-start items-center gap-2  font-main font-normal text-lg text-white-alt"> <PiHouseBold /> Home </span>
+            </a></li>
+              <li><a href="/crypto"><span class="flex justify-start items-center gap-2 font-main font-normal text-lg text-white-alt"> <PiPlanetBold /> CryptoWorld </span></a></li>
+              <li><a href="/news"><span class="flex justify-start items-center gap-2 font-main font-normal text-lg text-white-alt"> <PiNewspaper /> FreshNews </span></a></li>
+            </ul>
+          </details>
+    </div>
+  </div>
+  </section>
+  

@@ -1,0 +1,60 @@
+---
+import millify from 'millify'
+import { coins } from '../api/api.js'
+import BaseLayout from '../layouts/BaseLayout.astro'
+const title = 'Top 50 Cryptos'
+const description = 'Crypto News'
+const keywords = 'crytpo news'
+
+interface Currency {
+	name: string
+	symbol: string
+	id: string
+	rank: number
+	iconUrl: string
+	price: number
+	marketCap: number
+	change: number
+}
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+	<main>
+		<h1 class="pb-3 font-main text-xl font-semibold capitalize text-white-alt md:text-3xl">
+			{title}
+		</h1>
+
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-3 2xl:grid-cols-4">
+			{
+				coins.map((currency: Currency) => (
+					<article
+						class="rounded-lg bg-base-300 p-4 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]"
+						id={currency.id}
+					>
+						<div class="flex items-center justify-between">
+							<h2 class="font-main text-2xl font-semibold capitalize text-pink-400">
+								{currency.rank}. {currency.name}
+							</h2>
+							<img src={currency.iconUrl} alt={`${currency.name} Icon`} class="h-[2rem] w-[2rem]" />
+						</div>
+
+						<div>
+							<p class="text-normal font-main uppercase text-gray-500 md:text-lg">
+								{currency.symbol}
+							</p>
+							<p class="stat-value font-sun text-lavender-alt md:py-2">
+								Price: <span class="text-aqua">${millify(currency.price)} </span>{' '}
+							</p>
+							<p class="whitespace-nowrap font-sun font-thin text-gray-400 md:text-lg">
+								Market Cap: <span class="text-gray-300">{millify(currency.marketCap)} </span>
+							</p>
+							<p class="whitespace-nowrap font-sun font-thin text-gray-400 md:text-lg">
+								Daily Change: <span class="text-gray-300">{millify(currency.change)}%</span>
+							</p>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</main>
+</BaseLayout>
