@@ -15,6 +15,7 @@ interface Currency {
 	iconUrl: string
 	price: number
 	marketCap: number
+	change: number
 }
 
 function formatNumber(number: number | string): string {
@@ -66,6 +67,12 @@ function formatNumber(number: number | string): string {
 							</p>
 							<p class="whitespace-nowrap font-sun font-thin text-gray-400 md:text-lg">
 								Market Cap: <span class="text-gray-300">{formatNumber(currency.marketCap)} </span>
+							</p>
+							<p class="whitespace-nowrap font-sun font-thin text-gray-400 md:text-lg">
+								Daily Change:{' '}
+								<span class="text-gray-300">
+									{currency.change !== undefined ? `${formatNumber(currency.change)}%` : 'N/A'}
+								</span>
 							</p>
 						</div>
 					</article>
