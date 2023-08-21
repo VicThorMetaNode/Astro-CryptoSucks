@@ -41,6 +41,25 @@ interface FreshNews {
 	provider: Provider[]
 	datePublished: string
 }
+
+function formatNumber(number: number | string): string {
+	// Convert the input to a number if it's a string
+	const numericValue = typeof number === 'string' ? parseFloat(number) : number
+
+	if (isNaN(numericValue) || numericValue === null) {
+		return 'N/A'
+	}
+
+	if (numericValue >= 1) {
+		const suffixes = ['', 'K', 'M', 'B', 'T']
+		const suffixIndex = Math.floor(Math.log10(Math.abs(numericValue)) / 3)
+		const shortNumber = (numericValue / Math.pow(10, suffixIndex * 3)).toFixed(2)
+		return shortNumber + suffixes[suffixIndex]
+	} else {
+		// Display the x decimal places for numbers less than 1
+		return numericValue.toFixed(5)
+	}
+}
 ---
 
 <BaseLayout title={title} description={description} keywords={keywords}>
@@ -54,34 +73,37 @@ interface FreshNews {
 					class="flex items-center justify-between rounded-2xl bg-slate-800 p-2 font-sun font-normal capitalize text-lavender-alt md:p-4 md:text-xl"
 				>
 					Total Cryptos<span class="pr-2 font-sun text-2xl text-aqua md:pr-5"
-						>{stats.totalCoins}</span
+						>{formatNumber(stats.totalCoins)}</span
 					>
 				</div>
 				<div
 					class="flex items-center justify-between rounded-2xl bg-slate-800 p-2 font-sun font-normal capitalize text-lavender-alt md:p-4 md:text-xl"
 				>
 					Total Xchanges <span class="pr-2 font-sun text-2xl text-aqua md:pr-5"
-						>{stats.totalExchanges}</span
+						>{formatNumber(stats.totalExchanges)}</span
 					>
 				</div>
 				<div
 					class="flex items-center justify-between rounded-2xl bg-slate-800 p-2 font-sun font-normal capitalize text-lavender-alt md:p-4 md:text-xl"
 				>
 					<span class="pr-5 md:pr-0">Total Market Cap</span><span
-						class="pr-2 font-sun text-2xl text-aqua md:pr-5">{stats.totalMarkets}</span
+						class="pr-2 font-sun text-2xl text-aqua md:pr-5"
+						>{formatNumber(stats.totalMarkets)}</span
 					>
 				</div>
 				<div
 					class="flex items-center justify-between rounded-2xl bg-slate-800 p-2 font-sun font-normal capitalize text-lavender-alt md:p-4 md:text-xl"
 				>
 					<span class="pr-5 md:pr-0">Total 24h Volume</span>
-					<span class="pr-2 font-sun text-2xl text-aqua md:pr-5">{stats.total24hVolume}</span>
+					<span class="pr-2 font-sun text-2xl text-aqua md:pr-5"
+						>{formatNumber(stats.total24hVolume)}</span
+					>
 				</div>
 				<div
 					class="flex items-center justify-between rounded-2xl bg-slate-800 p-2 font-sun font-normal capitalize text-lavender-alt md:p-4 md:text-xl"
 				>
 					Total Markets <span class="pr-2 font-sun text-2xl text-aqua md:pr-5 md:text-3xl"
-						>{stats.totalMarketCap}</span
+						>{formatNumber(stats.totalMarketCap)}</span
 					>
 				</div>
 			</div>
@@ -128,13 +150,13 @@ interface FreshNews {
 									{currency.symbol}
 								</p>
 								<p class="stat-value font-sun text-lavender-alt md:py-2">
-									Price: <span class="text-aqua">${currency.price} </span>{' '}
+									Price: <span class="text-aqua">${formatNumber(currency.price)} </span>{' '}
 								</p>
 								<p class="whitespace-nowrap font-sun font-thin text-gray-400 md:text-lg">
-									Market Cap: <span class="text-gray-300">{currency.marketCap} </span>
+									Market Cap: <span class="text-gray-300">{formatNumber(currency.marketCap)} </span>
 								</p>
 								<p class="whitespace-nowrap font-sun font-thin text-gray-400 md:text-lg">
-									Daily Change: <span class="text-gray-300">{currency.change}%</span>
+									Daily Change: <span class="text-gray-300">{formatNumber(currency.change)}%</span>
 								</p>
 							</div>
 						</article>
