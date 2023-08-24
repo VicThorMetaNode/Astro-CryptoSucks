@@ -6,6 +6,7 @@ Crypto Prices & News **APi management** using **ASTRO** - **TYPESCRIPT** - **REA
 <p>🗹 TypeScript</p>
 <p>🗹 DaisyUi</p>
 <p>🗹 RapidApi</p>
+<p>🗹 Iconify</p>
 <p>🗹 Playwright</p>
 <p>------------------</p>
 <p>📦NPM Packages used:</p>
