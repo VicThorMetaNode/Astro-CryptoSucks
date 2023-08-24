@@ -6,7 +6,8 @@ Crypto Prices & News **APi management** using **ASTRO** - **TYPESCRIPT** - **REA
 <p>🗹 TypeScript</p>
 <p>🗹 DaisyUi</p>
 <p>🗹 RapidApi</p>
+<p>🗹 Playwright</p>
 <p>------------------</p>
 <p>📦NPM Packages used:</p>
-<p>✔️Millify: converts long numbers to pretty, human-readable strings</p>
+<p>✔️dotenv: allows to store sensitive information outside of codebase</p>
 <p>✔️Moment: parse, validate, manipulate, and display dates</p>
