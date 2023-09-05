@@ -2,7 +2,7 @@
 
 Get the latest on **Crypto Prices & News** with this platform powered by **Astro**, **TypeScript**, **React**, **Tailwind**, **DaisyUI**, & **RapidAPI**.
 
-> **Revamped Legacy Projects Series**: The initial project was launched in 2018, utilizing React and Redux. The moment has come for an evolution. The present undertaking draws inspiration from its predecessor while being entirely constructed with Astro, React, TypeScript & Tailwind.
+- **Revamped Legacy Projects Series**: The initial project was launched in 2018, utilizing React and Redux. The moment has come for an evolution. The present undertaking draws inspiration from its predecessor while being entirely constructed with Astro, React, TypeScript & Tailwind.
 
 🚀 **Deployed August 2023**: [cryptosucksagain.netlify.app](https://cryptosucksagain.netlify.app/)
 
